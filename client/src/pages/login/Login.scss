@@ -1,0 +1,116 @@
+@import "../../responsive.scss";
+
+.login {
+  display: flex;
+  .loginForm {
+    flex: 3;
+    .wrapper {
+      padding-right: 100px;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 50px;
+      height: 100%;
+
+      @include md {
+        padding: 0;
+      }
+      @include sm {
+        justify-content: flex-start;
+      }
+      .title {
+        font-size: 64px;
+        text-align: center;
+       
+
+        @include lg {
+          font-size: 48px;
+          text-align: center;
+        }
+        @include md {
+          margin-top: 30px;
+          text-align: center;
+          font-size: 48px;
+        }
+      }
+      
+  
+      div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+       
+
+        @include md {
+          padding: 0;
+        }
+        @include sm {
+          padding: 0;
+        }
+
+        input {
+          padding: 16px;
+          margin-bottom: 10px;
+          width: 60%;
+          
+          @include md {
+            width: 100%;
+          }
+        }
+        button {
+          padding: 16px;
+          font-size: 16px;
+          width: 60%;
+          background-color: #fece51;
+          border: none;
+          cursor: pointer;
+          @include md {
+            width: 100%;
+          }
+          @include sm {
+            width: 100%;
+            margin-left: 0;
+          }
+        }
+        .register {
+          margin-top: 10px;
+
+          font-size: 16px;
+          @include md {
+            margin-left: 0;
+            text-align: center;
+          }
+          @include sm {
+            margin-left: 0;
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+  .imgcontainer {
+    position: relative;
+    display: flex;
+    height: calc(100vh - 100px);
+    align-items: center;
+    flex: 2;
+    background-color: #fcf5f3;
+    @include md {
+      display: none;
+    }
+    img {
+      margin-top: 10px;
+      width: 115%;
+      position: absolute;
+      right: 0;
+      top: -25px;
+
+      @include lg {
+        position: absolute;
+        width: 105%;
+      }
+    }
+  }
+}
