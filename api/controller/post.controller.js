@@ -16,7 +16,9 @@ export const getPost = async (req, res) => {
         }
       }
     });
+ 
     res.status(200).json({ message: "Post Found Successfully", post });
+   
   } 
   catch (error) {
     console.log(error);
