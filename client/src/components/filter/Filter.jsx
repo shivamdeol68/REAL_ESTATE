@@ -41,6 +41,7 @@ const handlefilter=()=>{
           />
         </div>
       </div>
+      
       <div className="bottom">
         <div className="item">
         <label htmlFor="type">Type</label>

@@ -8,6 +8,7 @@ router.get("/",getUsers)
 router.get("/:id",verifyToken,getUser)
 router.put("/:id",verifyToken,UpdateUser)
 router.delete("/:id",verifyToken,DeleteUser)
+router.post("/save",verifyToken,savepost)
 
 
 export default router;
