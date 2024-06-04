@@ -66,7 +66,7 @@ export const singlePost = async (req, res) => {
         }
       }
     })
-    res.status(200).json({ ...singlepost,isSaved:saved?true:false });
+    res.status(200).json({ ...singlepost,isSaved : saved ? true : false });
   } catch (error) {
     console.log(error);
     res.status(500).json({ message: "Failed to get post" });

@@ -101,8 +101,7 @@ function SinglePage() {
                 <p>
                   {post.Postdetail.school > 999
                     ? post.Postdetail.school / 1000 + "Km"
-                    : post.Postdetail.school + "m"}
-                  away
+                    : post.Postdetail.school + "m"} away
                 </p>
               </div>
             </div>
@@ -114,7 +113,7 @@ function SinglePage() {
                   {post.Postdetail.bus > 999
                     ? post.Postdetail.bus / 1000 + "Km"
                     : post.Postdetail.bus + "m"}{" "}
-                  Away
+                  away
                 </p>
               </div>
             </div>
