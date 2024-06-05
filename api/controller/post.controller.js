@@ -1,5 +1,6 @@
 import prisma from "../lib/prisma.js";
 import jwt from "jsonwebtoken";
+
 export const getPost = async (req, res) => {
   const query=req.query;
   console.log(query);
@@ -25,6 +26,7 @@ export const getPost = async (req, res) => {
     res.status(500).json({ message: "Failed to get posts" });
   }
 };
+
 export const singlePost = async (req, res) => {
   const id = req.params.id;
   try {

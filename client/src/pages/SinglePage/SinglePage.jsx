@@ -14,10 +14,10 @@ function SinglePage() {
 
   const {currentUser}=useContext(AuthContext)
   const handleSubmit=async()=>{
-    setSaved((prev)=>!prev);
     if(!currentUser){
       navigate('/login')
     }
+    setSaved((prev)=>!prev);
     try {
       await apirequest.post("/user/save",{postId:post.id})
     } catch (error) {
