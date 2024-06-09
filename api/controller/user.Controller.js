@@ -1,6 +1,7 @@
 import prisma from "../lib/prisma.js";
 import bcrypt from "bcrypt";
 
+
 export const getUsers = async (req, res) => {
   try {
        const user= await prisma.user.findMany();
@@ -109,3 +110,24 @@ export const savepost = async (req, res) => {
     res.status(500).json({ message: "Failed to delete users!" });
   }
 };
+
+
+export const profilePosts=async(req,res)=>{
+  const tokenuserId=req.params.userId;
+  try {
+    const userpost=await prisma.post.findUnique({
+      where:{userId:tokenuserId},
+    });
+    const save=await prisma.savePost.findUnique({
+      where:{userId:tokenuserId},
+      include:{
+        post:true,
+      }
+    });
+    const savepost = save.map(item=>item.post)
+    res.status(200).json({userpost,savepost})
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({message:"Failed to fetch user profile"})
+  }
+}

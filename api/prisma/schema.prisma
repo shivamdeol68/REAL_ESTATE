@@ -55,6 +55,7 @@ enum Property{
   condo
 }
 
+
 model postdetail{
   id String @id @default(auto()) @map("_id") @db.ObjectId
   desc String

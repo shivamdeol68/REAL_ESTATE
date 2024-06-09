@@ -12,3 +12,12 @@ export const listpageLoader = async ({ request, params }) => {
         postResponse:postPromise
     })
   }
+
+
+  export const profilepageLoader = async ({ request, params }) => {
+    const query = request.url.split("?")[1]
+    const postPromise = await apirequest("/post?" + query)
+    return defer({
+        postResponse:postPromise
+    })
+  }
