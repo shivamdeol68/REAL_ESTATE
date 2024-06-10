@@ -48,7 +48,7 @@ function App() {
         {
           path: "/profile",
           element: <Profile />,
-          loader: profilepageLoader,
+          loader: profilepageLoader
         },
         {
           path: "/profile/update",

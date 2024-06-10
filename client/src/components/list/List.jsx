@@ -3,7 +3,7 @@ import "./List.scss"
 import Card from "../card/Card"
 // import { products } from '../../lib/DummyData'
 function List({post}) {
-    
+    console.log(post);
   return (
     <div className='list'>
         {post.map(item=>{

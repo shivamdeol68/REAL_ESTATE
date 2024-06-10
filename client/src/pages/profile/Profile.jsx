@@ -9,7 +9,7 @@ function Profile() {
   const data = useLoaderData();
   const {currentUser,updateUser}=useContext(AuthContext)
   const navigate=useNavigate();
-
+  console.log(data);
   const handlelogout=async()=>{
     try {
       await apirequest.post("/auth/logout")
@@ -53,7 +53,7 @@ function Profile() {
             resolve={data.postResponse}
             errorElement={<p>Error loading post!</p>}
             >
-              {(postResponse)=> <List post={postResponse.data.userpost}/>
+              {(postResponse)=> <List post={postResponse.data.post}/>
               }
             </Await>
           </Suspense>
@@ -66,7 +66,7 @@ function Profile() {
             resolve={data.postResponse}
             errorElement={<p>Error loading post!</p>}
             >
-              {(postResponse)=> <List post={postResponse.data.savepost}/>
+              {(postResponse)=> <List post={postResponse.data.post}/>
               }
             </Await>
           </Suspense>
