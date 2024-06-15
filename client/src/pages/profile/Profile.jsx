@@ -9,7 +9,7 @@ function Profile() {
   const data = useLoaderData();
   const {currentUser,updateUser}=useContext(AuthContext)
   const navigate=useNavigate();
-  console.log(data);
+  console.log("data",data);
   const handlelogout=async()=>{
     try {
       await apirequest.post("/auth/logout")
