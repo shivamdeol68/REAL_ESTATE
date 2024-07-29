@@ -6,6 +6,8 @@ import { useLoaderData, useNavigate } from "react-router-dom";
 import DOMPurify from "dompurify";
 import { AuthContext } from "../../context/AuthContext";
 import apirequest from "../../lib/apiRequest";
+
+
 function SinglePage() {
   const post = useLoaderData();
   console.log("SinglePost-Data",post);
@@ -29,25 +31,25 @@ function SinglePage() {
     <div className="singlepage">
       <div className="details">
         <div className="wrapper">
-          <Slider images={post.images} />
+          <Slider images={post.data.images} />
           <div className="info">
             <div className="top">
               <div className="post">
-                <h1>{post.title}</h1>
+                <h1>{post.data.title}</h1>
                 <div className="address">
                   <img src="images/pin.png" alt="" />
                   <span>
-                    {post.address},{post.city}
+                    {post.data.address},{post.data.city}
                   </span>
                 </div>
-                <div className="price">₹{post.price}</div>
+                <div className="price">₹{post.data.price}</div>
               </div>
               <div className="user">
-                <img src={post.User.avatar} alt="" />
-                <span>{post.User.name}</span>
+                <img src={post.data.User.avatar} alt="" />
+                <span>{post.data.User.name}</span>
               </div>
             </div>
-            <div className="bottom" dangerouslySetInnerHTML={{__html:DOMPurify.sanitize(post.Postdetail.desc)}}></div>
+            <div className="bottom" dangerouslySetInnerHTML={{__html:DOMPurify.sanitize(post.data.Postdetail.desc)}}></div>
           </div>
         </div>
       </div>
@@ -59,21 +61,21 @@ function SinglePage() {
               <img src="images/utility.png" alt="" />
               <div className="featureText">
                 <span>Utilities</span>
-                <p>{post.Postdetail.utilities}</p>
+                <p>{post.data.Postdetail.utilities}</p>
               </div>
             </div>
             <div className="feature">
               <img src="images/pet.png" alt="" />
               <div className="featureText">
                 <span>Pet Policy</span>
-                <p>{post.Postdetail.pet}</p>
+                <p>{post.data.Postdetail.pet}</p>
               </div>
             </div>
             <div className="feature">
               <img src="images/fee.png" alt="" />
               <div className="featureText">
                 <span>Income Policy</span>
-                <p>₹{post.Postdetail.income}</p>
+                <p>₹{post.data.Postdetail.income}</p>
               </div>
             </div>
           </div>
@@ -81,15 +83,15 @@ function SinglePage() {
           <div className="sizes">
             <div className="size">
               <img src="images/size.png" alt="" />
-              <span>{post.Postdetail.size} sqft</span>
+              <span>{post.data.Postdetail.size} sqft</span>
             </div>
             <div className="size">
               <img src="images/bed.png" alt="" />
-              <span>{post.bedroom} beds</span>
+              <span>{post.data.bedroom} beds</span>
             </div>
             <div className="size">
               <img src="images/bath.png" alt="" />
-              <span>{post.bathroom} bathroom</span>
+              <span>{post.data.bathroom} bathroom</span>
             </div>
           </div>
           <p className="title">Nearby Places</p>
@@ -99,9 +101,9 @@ function SinglePage() {
               <div className="featureText">
                 <span>School</span>
                 <p>
-                  {post.Postdetail.school > 999
-                    ? post.Postdetail.school / 1000 + "Km"
-                    : post.Postdetail.school + "m"} away
+                  {post.data.Postdetail.school > 999
+                    ? post.data.Postdetail.school / 1000 + "Km"
+                    : post.data.Postdetail.school + "m"} away
                 </p>
               </div>
             </div>
@@ -110,9 +112,9 @@ function SinglePage() {
               <div className="featureText">
                 <span>Bus Stop</span>
                 <p>
-                  {post.Postdetail.bus > 999
-                    ? post.Postdetail.bus / 1000 + "Km"
-                    : post.Postdetail.bus + "m"}{" "}
+                  {post.data.Postdetail.bus > 999
+                    ? post.data.Postdetail.bus / 1000 + "Km"
+                    : post.data.Postdetail.bus + "m"}{" "}
                   away
                 </p>
               </div>
@@ -122,9 +124,9 @@ function SinglePage() {
               <div className="featureText">
                 <span>Restaurant</span>
                 <p>
-                  {post.Postdetail.restaurant > 999
-                    ? post.Postdetail.restaurant / 1000 + "Km"
-                    : post.Postdetail.restaurant + "m"}{" "}
+                  {post.data.Postdetail.restaurant > 999
+                    ? post.data.Postdetail.restaurant / 1000 + "Km"
+                    : post.data.Postdetail.restaurant + "m"}{" "}
                   away
                 </p>
               </div>
